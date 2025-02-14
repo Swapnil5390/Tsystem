@@ -2,19 +2,21 @@
 
 <head>
     <title>ProductCatlog</title>
-    <link rel="stylesheet"
+    <!-- <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous"> 
+          crossorigin="anonymous">  -->
+          <link rel="stylesheet" href="./productstyle.css">
+          
         <script src="../angular.min.js"></script>
-        <script src="../dist/controlller/login.controller.js"></script>
+        <script src="../angular-route.min.js"></script>
         <script src="../dist/controlller/product.catlog.controller.js"></script>
         <script src="../dist/app.module.js"></script>
 
 </head>
 
-<body>
-    <div ng-app="myApp" ng-controller="ProductCatalogController as vm">
+<body  ng-app="myApp">
+    <!-- <div  ng-controller="ProductCatalogController as vm">
         <div class="row" style="display: flex; flex-wrap: wrap;">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="product in vm.products">
                 <div class="card" style="border: solid; border-width: thin;">
@@ -29,7 +31,7 @@
                                 <br>
                                 Price:<b>{{product.price | currency : "₹" : 2}}</b>
                                 <br>
-                                <button class="btn btn-primary stretched-link">Buy now</button>
+                                <button class="btn btn-primary stretched-link" ng-click="vm.onAddCart(product)">Add To Cart</button>
 
                             </p>
                         </div>
@@ -38,6 +40,29 @@
                     </div>
 
 
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+    <div  ng-app="myApp" ng-controller="ProductCatalogController as vm">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="product in vm.products">
+                    <div class="card">
+                        <div class="card-img">
+                            <img class="card-img-top" ng-src="{{product.imgSrc}}" alt="Card image">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{product.name}}</h4>
+                            <p class="card-text">
+                                <strong>No. Of Units Per Pack:</strong> {{product.UnitsPerPack}}
+                                <br>
+                                <strong>Price:</strong> <b>{{product.price | currency : "₹" : 2}}</b>
+                            </p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

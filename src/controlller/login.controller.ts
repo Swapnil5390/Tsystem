@@ -11,8 +11,8 @@ export class MyFirstController{
             "password":"123"
         },
         {
-            "email":"pawar2@gamil.com",
-            "password":"1234"
+            "email":"swappy8686@gmail.com",
+            "password":"Swappy@5390"
         },
         {
             "email":"vaibhav@gamil.com",

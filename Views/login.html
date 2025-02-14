@@ -2,7 +2,7 @@
 
 <head>
     <title>E-commerce Login</title>
-  
+    <link rel="stylesheet" href="./loginstyle.css">
  <script src="../angular.min.js"></script>
  <script src="../dist/controlller/login.controller.js"></script>
  <script src="../dist/app.module.js"></script>
@@ -11,8 +11,8 @@
 
 <body ng-app="myApp">
 
-    <div ng-controller="MyFirstController as vm">
-        <h1>TFL Store</h1>
+    <!-- <div ng-controller="MyFirstController as vm"> 
+         <h1>TFL Store</h1>
         <ol>
             <li>Roses</li>
             <li>Lotus</li>
@@ -51,6 +51,22 @@
                         </table>
             <label id="message"></label>
 
+        </div>
+    </div> -->
+    <div ng-controller="MyFirstController as vm">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" ng-model="user.email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" ng-model="user.password"  required>
+                </div>
+                <button ng-click="vm.onValidate()">Login</button>
+            </form>
         </div>
     </div>
 

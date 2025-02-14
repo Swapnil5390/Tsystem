@@ -2,11 +2,14 @@
 
 <head>
     <title>E-commerce Login</title>
-    <link rel="stylesheet"
+    <!-- <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous"> 
-  <script src="../angular.min.js"></script>
+    crossorigin="anonymous">  -->
+    <link rel="stylesheet" href="./views/productstyle.css">
+ 
+  <script src="./angular.min.js"></script>
+  <script src="./angular-route.min.js"></script>
   <script src="../dist/controlller/login.controller.js"></script>
   <script src="../dist/controlller/product.catlog.controller.js"></script>
   <script src="../dist/app.module.js"></script>
@@ -14,8 +17,11 @@
 </head>
 <body ng-app="myApp">
 
+<div ng-include src="'views/header.html'"></div>
+<div ng-view></div> 
+<div ng-include src="'views/footer.html'"></div>
    
-    <div ng-controller="MyFirstController as vm">
+    <!-- <div ng-controller="MyFirstController as vm">
         <h1>TFL Store</h1>
         <ol>
             <li>Roses</li>
@@ -88,7 +94,8 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
+
 
 </body>
 
