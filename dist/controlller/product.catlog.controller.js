@@ -20,13 +20,15 @@ var ProductCatalogController = /** @class */ (function () {
                 name: 'Cycloserine',
                 UnitsPerPack: '100',
                 price: '30',
-                imgSrc: 'https://cpimg.tistatic.com/08062380/b/5/Cycloserine-Capsule.jpg'},
+                imgSrc: 'https://cpimg.tistatic.com/08062380/b/5/Cycloserine-Capsule.jpg'
+            },
             {
                 id: '04',
                 name: 'Pyrazinamide',
                 UnitsPerPack: '120',
                 price: '7',
-                imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPR-StrFgRNaqI0gxtPbPGqZ0ReRDAtPxVCw&sx'}
+                imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPR-StrFgRNaqI0gxtPbPGqZ0ReRDAtPxVCw&s'
+            }
         ];
         //this.getProductsData();
         $scope['vm'] = this;
@@ -34,3 +36,4 @@ var ProductCatalogController = /** @class */ (function () {
     ProductCatalogController.$inject = ['$scope'];
     return ProductCatalogController;
 }());
+

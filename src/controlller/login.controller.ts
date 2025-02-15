@@ -1,12 +1,16 @@
 
 import { IScopeCustom } from "../interfaces/iscope.interface";
+import { ProductService } from "../services/product.services";
 
 export class MyFirstController{
-    name!:string;
-    user ={
-         "email":"swappy8686@gmail.com",
-        "password":"Swappy@5390"
-    };
+    static $inject=['$scope','$location','ProductService'];
+   email: string='';
+   password: string ='';
+    constructor(private $scope:IScopeCustom, private $location: angular.ILocationService,private productService : ProductService){
+        
+     this.productService.setUserLogOut()
+    }
+
     users=[{"email":"pawar3382@gamil.com",
             "password":"123"
         },
@@ -29,17 +33,24 @@ export class MyFirstController{
     ]
 
     onValidate(){
-        if(this.user.email ==="swappy8686@gmail.com" && this.user.password ==="Swappy@5390"){
-            console.log("Welcome To Store");
-            alert("Welcome To Store");
-        }else{
-            console.log("Invalid");
-            alert("Invalid");
-        }
+        if(this.email ==="swapnil" && this.password ==="swapnil"){
+            this.productService.setUserLogin();
+            this.productService.setRoute('product')
+            }
     }
-    constructor($scope:IScopeCustom){
-        $scope['vm']=this;
+
+    getLoggedInUser(){
+        return this.productService.getLoggedInUser();
+    }
+    checkIfLoginPage(){
+        if(this.$location.path() !='/login'){
+            return true;
+        }
+        return false;
+
+    }
+    logoutUser(){
+        return this.productService.setUserLogOut();
     }
     
-   
 }

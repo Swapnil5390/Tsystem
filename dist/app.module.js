@@ -1,5 +1,7 @@
 
 angular.module('myApp', ['ngRoute'])
+    .service('ProductService', ProductService)
+    .controller('MyFirstController', MyFirstController)
     .controller('ProductCatalogController', ProductCatalogController)
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider

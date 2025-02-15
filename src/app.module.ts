@@ -2,11 +2,12 @@ import angular from "angular";
 import 'angular-route';  // Import ngRoute for routing
 import { MyFirstController } from "./controlller/login.controller";
 import { ProductCatalogController } from "./controlller/product.catlog.controller";
+import { ProductService }from "./services/product.services";
 
 angular.module('myApp', ['ngRoute'])
+.service('ProductService',ProductService)
 .controller('MyFirstController',MyFirstController)
 .controller('ProductCatalogController',ProductCatalogController)
-
 .config(['$routeProvider',($routeProvider:any)=>{
     $routeProvider
     .when('/product',{
