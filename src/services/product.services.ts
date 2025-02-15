@@ -13,11 +13,17 @@ export class ProductService {
         return this.$http.get("./product.data.json");
     }
 
-    public getCartProducts(): Product[] {
-        return JSON.parse(JSON.stringify(sessionStorage.getItem('cartProducts')));
+    public getCartProducts(){
+        let tempdata = JSON.parse(sessionStorage.getItem('cartProducts') || '[]')
+        return tempdata != null ? tempdata.length : 0;
     }
 
-    public addProductToCart(product: Product) {
+    public getCartProductsCount() {
+        let tempdata = JSON.parse(sessionStorage.getItem('cartProducts') || '[]')
+        return tempdata != null ? tempdata.length : 0;
+    }
+    
+    public addProductToCart(product: Product[]) {
         sessionStorage.setItem('cartProducts', JSON.stringify(product));
     }
 

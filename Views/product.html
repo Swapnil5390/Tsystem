@@ -61,7 +61,7 @@
                                 <br>
                                 <strong>Price:</strong> <b>{{product.price | currency : "₹" : 2}}</b>
                             </p>
-                            <button class="btn-buy">Buy Now</button>
+                            <button ng-disabled="vm.getLoggedInUser()" class="btn btn-primary stretched-link btn-sm">Add to cart</button>
                         </div>
                     </div>
                 </div>
