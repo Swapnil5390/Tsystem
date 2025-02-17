@@ -3,6 +3,7 @@ angular.module('myApp', ['ngRoute'])
     .service('ProductService', ProductService)
     .controller('MyFirstController', MyFirstController)
     .controller('ProductCatalogController', ProductCatalogController)
+    .controller('ShoppingController', ShoppingController)
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/product', {
@@ -14,6 +15,11 @@ angular.module('myApp', ['ngRoute'])
             templateUrl: 'views/login.html',
             controller: 'MyFirstController',
             controllerAs: 'myFirstControllerCtrl'
+        })
+            .when('/cart', {
+            templateUrl: 'views/shopping_cart.html',
+            controller: 'ShoppingController',
+            controllerAs: 'ShoppingControllerCtrl'
         })
             .otherwise({
             redirectTo: 'product' // Default route is home

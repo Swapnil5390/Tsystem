@@ -3,10 +3,8 @@ var MyFirstController = /** @class */ (function () {
         this.$scope = $scope;
         this.$location = $location;
         this.productService = productService;
-        this.user = {
-            "email": "swapnil",
-            "password": "swapnil"
-        };
+        this.email = '';
+        this.password = '';
         this.users = [{ "email": "pawar3382@gamil.com",
                 "password": "123"
             },
@@ -27,10 +25,10 @@ var MyFirstController = /** @class */ (function () {
                 "password": "123456"
             }
         ];
-        $scope['vm'] = this;
+        this.productService.setUserLogOut();
     }
     MyFirstController.prototype.onValidate = function () {
-        if (this.user.email === "swapnil" && this.user.password === "swapnil") {
+        if (this.email === "swapnil" && this.password === "swapnil") {
             this.productService.setUserLogin();
             this.productService.setRoute('product');
         }
@@ -43,6 +41,9 @@ var MyFirstController = /** @class */ (function () {
             return true;
         }
         return false;
+    };
+    MyFirstController.prototype.logoutUser = function () {
+        return this.productService.setUserLogOut();
     };
     MyFirstController.$inject = ['$scope', '$location', 'ProductService'];
     return MyFirstController;

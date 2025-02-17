@@ -7,7 +7,12 @@ var ProductService = /** @class */ (function () {
         return this.$http.get("./product.data.json");
     };
     ProductService.prototype.getCartProducts = function () {
-        return JSON.parse(JSON.stringify(sessionStorage.getItem('cartProducts')));
+        var tempdata = JSON.parse(sessionStorage.getItem('cartProducts') || '[]');
+        return tempdata != null ? tempdata.length : 0;
+    };
+    ProductService.prototype.getCartProductsCount = function () {
+        var tempdata = JSON.parse(sessionStorage.getItem('cartProducts') || '[]');
+        return tempdata != null ? tempdata.length : 0;
     };
     ProductService.prototype.addProductToCart = function (product) {
         sessionStorage.setItem('cartProducts', JSON.stringify(product));
@@ -31,3 +36,4 @@ var ProductService = /** @class */ (function () {
     ProductService.$inject = ['$http', '$location'];
     return ProductService;
 }());
+
